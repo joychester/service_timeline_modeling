@@ -11,29 +11,32 @@
         dataTable.addColumn({ type: 'string', id: 'API Name' });
         dataTable.addColumn({ type: 'number', id: 'Start' });
         dataTable.addColumn({ type: 'number', id: 'End' });
-        
+            
         appendService(dataTable, chart, 'API-1', false, 20);
         appendService(dataTable, chart, 'API-2', false, 10);
         appendService(dataTable, chart, 'API-3', false, 30);
+        appendService(dataTable, chart, 'API-4', true, 20);
+        appendService(dataTable, chart, 'API-5', false, 10);
         
         chart.draw(dataTable);
       }
       
       function appendService(dataTable, chart, serviceName, loadInParallel, serviceDuration) {
           const serviceDetails = [];
-          // add service Name
+            
           serviceDetails.push(serviceName);
-          // add Start Number
+            
           if (loadInParallel === true) {
             serviceDetails.push(currentStart);
+            serviceDetails.push(currentStart + serviceDuration);
             currentEnd = (serviceDuration > (currentEnd - currentStart)) ? (currentStart + serviceDuration) : currentEnd;
           } else {
             serviceDetails.push(currentEnd);
+            serviceDetails.push(currentEnd + serviceDuration);
             currentStart = currentEnd;
             currentEnd = currentStart + serviceDuration;
           }
-          // add Duration Number
-          serviceDetails.push(currentEnd);
-          console.log(serviceDetails);
+          
+          //console.log(serviceDetails);
           dataTable.addRows([serviceDetails]);
       }
