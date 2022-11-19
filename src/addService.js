@@ -2,12 +2,7 @@
       google.charts.setOnLoadCallback(drawChart);
       let currentStart = 0;
       let currentEnd = 0;
-      const gchartContext = {};
-      
-      const clearScreenButton = document.getElementById("clearScreenBtn");
-      clearScreenButton.addEventListener("click", initChart, false);
-      
-      const addServiceButton = document.getElementById("addServiceBtn");
+      let gchartContext = {};
       
       function initChart() {
         const container = document.getElementById('timeline');
@@ -26,7 +21,12 @@
       }
       
       function drawChart(serviceName, loadInParallel, serviceDuration) {
-        const gchartContext = initChart();
+        gchartContext = initChart();
+        
+        const clearScreenButton = document.getElementById("clearScreenBtn");
+        clearScreenButton.addEventListener("click", initChart, false);
+      
+        const addServiceButton = document.getElementById("addServiceBtn");
         addServiceButton.addEventListener("click", () => { appendService(gchartContext.dataTable, gchartContext.chart, 'API-1', false, 20); }, false);
       }
       
