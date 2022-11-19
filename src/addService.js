@@ -5,7 +5,7 @@
       const gchartContext = {};
       
       const clearScreenButton = document.getElementById("clearScreenBtn");
-			clearScreenButton.addEventListener("click", initChart, false);
+      clearScreenButton.addEventListener("click", initChart, false);
       
       const addServiceButton = document.getElementById("addServiceBtn");
       
@@ -27,9 +27,7 @@
       
       function drawChart(serviceName, loadInParallel, serviceDuration) {
         const gchartContext = initChart();
-        
-        
-			  addServiceButton.addEventListener("click", () => { appendService(gchartContext.dataTable, gchartContext.chart, 'API-1', false, 20); }, false);
+        addServiceButton.addEventListener("click", () => { appendService(gchartContext.dataTable, gchartContext.chart, 'API-1', false, 20); }, false);
       }
       
       function appendService(dataTable, chart, serviceName, loadInParallel, serviceDuration) {
