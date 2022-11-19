@@ -2,12 +2,14 @@
       google.charts.setOnLoadCallback(drawChart);
       let currentStart = 0;
       let currentEnd = 0;
+      const gchartContext = {};
       
-      const addServiceButton = document.getElementById("clearScreenBtn");
-			addServiceButton.addEventListener("click", initChart, false);
+      const clearScreenButton = document.getElementById("clearScreenBtn");
+			clearScreenButton.addEventListener("click", initChart, false);
+      
+      const addServiceButton = document.getElementById("addServiceBtn");
       
       function initChart() {
-        const gchartContext = {};
         const container = document.getElementById('timeline');
         const chart = new google.visualization.Timeline(container);
         const dataTable = new google.visualization.DataTable();
@@ -23,18 +25,11 @@
         return gchartContext;
       }
       
-      function drawChart() {
+      function drawChart(serviceName, loadInParallel, serviceDuration) {
         const gchartContext = initChart();
-        /*
-        const addServiceButton = document.getElementById("addServiceBtn");
-				addServiceButton.addEventListener("click", () => { appendService(dataTable, chart, 'API-1', false, 20); }, false);
-        */
-        appendService(gchartContext.dataTable, gchartContext.chart, 'API-1', false, 20);
-        appendService(gchartContext.dataTable, gchartContext.chart, 'API-2', false, 10);
-        appendService(gchartContext.dataTable, gchartContext.chart, 'API-3', false, 30);
-        appendService(gchartContext.dataTable, gchartContext.chart, 'API-4', true, 20);
-        appendService(gchartContext.dataTable, gchartContext.chart, 'API-5', false, 10);
-        gchartContext.chart.draw(gchartContext.dataTable);
+        
+        
+			  addServiceButton.addEventListener("click", () => { appendService(gchartContext.dataTable, gchartContext.chart, 'API-1', false, 20); }, false);
       }
       
       function appendService(dataTable, chart, serviceName, loadInParallel, serviceDuration) {
@@ -55,4 +50,5 @@
           
           console.log(serviceDetails);
           dataTable.addRows([serviceDetails]);
+          chart.draw(dataTable);
       }
