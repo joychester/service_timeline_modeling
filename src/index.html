@@ -1,17 +1,14 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div style="height: 30px;">
-  <button class="Button" id="addServiceBtn">Add a seq API-A (10ms)</button>
+  <label for="api-duration">API Duration:</label>
+  <input type="text" id="api-duration" size="5">
+  <label>ms</label>
+  <button class="Button" id="addSeqServiceBtn" style="background-color:Orange;">Add a seq API</button>
+  <button class="Button" id="addParaServiceBtn" style="background-color:DodgerBlue;">Add a para API</button>
+</div>
+<div id="hidden-msg">
 </div>
 <div style="height: 30px;">
-  <button class="Button" id="addServiceBtn2">Add a seq API-B (20ms)</button>
-</div>
-<div style="height: 30px;">
-  <button class="Button" id="addServiceBtn3">Add a para API-C (15ms)</button>
-</div>
-<div style="height: 30px;">
-  <button class="Button" id="addServiceBtn4">Add a para API-D (30ms)</button>
-</div>
-<div style="height: 30px;">
-  <button class="Button" id="clearScreenBtn">Reset TimeChart</button>
+  <button class="Button" id="clearScreenBtn" style="background-color:GREY;">Reset TimeChart</button>
 </div>
 <div id="timeline" style="height: 220px;"></div>
