@@ -87,7 +87,7 @@
             currentStart = currentEnd;
             currentEnd = currentStart + serviceDuration;
           }
-          console.log(serviceDetails);
+          //console.log(serviceDetails);
           dataTable.addRows([serviceDetails]);
           chart.draw(dataTable);
         }
