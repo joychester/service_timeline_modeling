@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title API Modeling Page
+    %meta{:content => "Estimate your Service performance w/o testing", :name => "description"}/
+  %body
+    %script{:src => "https://cdn.tailwindcss.com"}
+    %script{:src => "https://www.gstatic.com/charts/loader.js", :type => "text/javascript"}
+    %div{:style => "height: 35px"}
+      %label.text-xs.font-medium.text-gray-700{:for => "api-duration"}
+        API Duration(ms):
+      %input#api-duration.mt-1.rounded-md.border-gray-200.shadow-sm.sm:text-sm{:placeholder => " in milliseconds", :type => "text"}/
+    %div{:style => "height: 30px"}
+      %span.inline-flex.-space-x-px.overflow-hidden.rounded-md.border.bg-white.shadow-sm
+        %button#addSeqServiceBtn.inline-block.px-4.py-2.text-sm.font-medium.text-gray-700.hover:bg-gray-50.focus:relative{:style => "background-color: Orange"}
+          ➖ Add a SEQ Call
+        %button#addParaServiceBtn.inline-block.px-4.py-2.text-sm.font-medium.text-gray-700.hover:bg-gray-50.focus:relative{:style => "background-color: DodgerBlue"}
+          ☰ Add a PARA Call
+        %button#clearScreenBtn.inline-block.px-4.py-2.text-sm.font-medium.text-gray-700.hover:bg-gray-50.focus:relative{:style => "background-color: Pink"}
+          🧽 Reset TimeChart
+    #hidden-msg{:style => "height: 20px; margin-top: 5px; color: red"}
+    #timeline{:style => "height: 400px;padding: 15px 15px;"}
+    %script{:src => "/js/addService.js", :type => "text/javascript"}
