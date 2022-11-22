@@ -9,3 +9,5 @@ paste the source code into https://jsfiddle.net/
 > * copy index.html into HTML section
 > * copy addService.js into js section
 > * Just run it and add more services on your own.
+
+Also you can quikcly setup a Sinatra server on your local to taste it, project folder structure has in this repo, you need to install Ruby(2 or 3), Sinatra, Haml and puma to get it ready!
