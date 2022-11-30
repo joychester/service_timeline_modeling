@@ -9,6 +9,9 @@ let gchartContext = {};
 
 function initChart() {
   api_seq = 1;
+  currentStart = 0;
+  currentEnd = 0;
+  
   if (document.getElementById("hidden-msg").childElementCount > 0) {
     const msg = document.getElementById("hidden-msg");
     msg.removeChild(msg.firstElementChild);
