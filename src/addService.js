@@ -45,16 +45,24 @@
         gchartContext = initChart();
 
         const clearScreenButton = document.getElementById("clearScreenBtn");
-        clearScreenButton.addEventListener("click", initChart, false);
+        clearScreenButton.addEventListener("click", () => {
+          initChart();
+          clearTextByElemID("api-name");
+          clearTextByElemID("api-duration");
+        }, false);
 
         const addServiceButton = document.getElementById("addSeqServiceBtn");
         addServiceButton.addEventListener("click", () => {
           appendService(gchartContext.dataTable, gchartContext.chart, false);
+          clearTextByElemID("api-name");
+          clearTextByElemID("api-duration");
         }, false);
 
         const addServiceButton2 = document.getElementById("addParaServiceBtn");
         addServiceButton2.addEventListener("click", () => {
           appendService(gchartContext.dataTable, gchartContext.chart, true);
+          clearTextByElemID("api-name");
+          clearTextByElemID("api-duration");
         }, false);
       }
 
@@ -75,7 +83,7 @@
           }
 
           const serviceDuration = parseInt(document.getElementById('api-duration').value);
-          const serviceName = `API-${api_seq++}`;
+          const serviceName = document.getElementById('api-name').value || `API-${api_seq++}`;
           const serviceDetails = [];
           // add service Name
           serviceDetails.push(serviceName);
@@ -93,5 +101,12 @@
           //console.log(serviceDetails);
           dataTable.addRows([serviceDetails]);
           chart.draw(dataTable);
+        }
+      }
+
+      function clearTextByElemID(elementID) {
+        const getValue = document.getElementById(elementID);
+        if (getValue.value != "") {
+          getValue.value = "";
         }
       }
