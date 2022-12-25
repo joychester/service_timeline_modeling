@@ -7,6 +7,17 @@
       let api_seq = 1;
       let gchartContext = {};
 
+      // add export listener for timeline chart
+      document.getElementById("btn-Convert-Html2Image").addEventListener("click", function() {
+        html2canvas(document.getElementById("timeline")).then(function(canvas) {
+          var anchorTag = document.createElement("a");
+          anchorTag.download = "timelinechart.jpg";
+          anchorTag.href = canvas.toDataURL();
+          anchorTag.target = '_blank';
+          anchorTag.click();
+        });
+      });
+
       function initChart() {
         api_seq = 1;
         currentStart = 0;
