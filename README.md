@@ -4,8 +4,8 @@ To help you model your own service load pattern and estimate your service perfor
 
 ![Sample_Screenshot](screenshots-hyperui.png)
 
-Try it: 
-paste the source code into https://jsfiddle.net/
+Try it here: https://jsfiddle.net/a409kurd/1/
+or paste the source code into https://jsfiddle.net/
 > * copy index.html into HTML section
 > * copy addService.js into js section
 > * Just run it and add more services on your own.
