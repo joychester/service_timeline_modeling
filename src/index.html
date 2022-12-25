@@ -1,10 +1,14 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div style="height: 35px;">
+  <label for="api-name" class="text-xs font-medium text-gray-700">
+    API Name:
+  </label>
+  <input type="text" id="api-name" placeholder="eg. 'API-GetProductById'" class="mt-1 rounded-md border-gray-200 shadow-sm sm:text-sm" style="border: 3px solid #ccc;" />
   <label for="api-duration" class="text-xs font-medium text-gray-700">
     API Duration(ms):
   </label>
-  <input type="text" id="api-duration" placeholder="in million seconds" class="mt-1 rounded-md border-gray-200 shadow-sm sm:text-sm" style="border: 3px solid #ccc;"/>
+  <input type="text" id="api-duration" placeholder="in million seconds" class="mt-1 rounded-md border-gray-200 shadow-sm sm:text-sm" style="border: 3px solid #ccc;" />
 </div>
 <div style="height: 30px;">
   <span class="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm">
@@ -15,7 +19,7 @@
     <button class="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" id="addParaServiceBtn" style="background-color:DodgerBlue;">
       ☰ Add a PARA Call
     </button>
-    
+
     <button class="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" id="clearScreenBtn" style="background-color:Pink;">
       🧽 Reset TimeChart
     </button>
